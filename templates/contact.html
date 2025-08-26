@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Contact Me</h1>
+    <h3>If you want to reach out, discuss projects, or collaborate, you can contact me via the following channels:</h3>
+</section>
+
+<section class="contact-methods">
+    <h2>Contact Information</h2>
+    <ul>
+        <li><strong>Email:</strong> genyadamenko@gmail.com</li>
+        <li><strong>Phone:</strong> +380980258746</li>
+        <li><strong>Telegram:</strong> @ezhnyag</li>
+        <li><strong>Telegram Channel:</strong><a href="https://t.me/+2MllMZSL7EQyNDA6" target="_blank"> TG Channel</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/Ezhnya" target="_blank">GitHub</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/zhenya_adamenko/" target="_blank">Instagram</a></li>
+    </ul>
+</section>
+
+<section class="contact-form">
+    <h2>Send Me a Message</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Your name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Your email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+{% endblock %}

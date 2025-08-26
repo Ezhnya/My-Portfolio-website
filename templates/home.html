@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Hello! I'm Ezhnya</h1>
+    <h3>I'm a Python Developer from Ukraine, creating utilities, web applications, and Telegram bots for practice and my portfolio.</h3>
+</section>
+
+<section class="about-me">
+    <h2>About Me</h2>
+    <p>
+        I'm 17 years old and actively learning Python and web development. I enjoy experimenting with programming, building practical projects, and improving my skills.
+    </p>
+</section>
+
+<section class="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python (beginner → advanced)</li>
+        <li>Django and web development</li>
+        <li>Creating Telegram bots</li>
+        <li>Working with APIs and automation</li>
+    </ul>
+</section>
+
+<section class="projects-preview">
+    <h2>My Projects</h2>
+    <p>Here you can see some of my work:</p>
+    <ul>
+    {% for project in projects|slice:":3" %}
+        <li>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description|truncatechars:120 }}</p>
+            {% if project.link %}<a href="{{ project.link }}" target="_blank">View Project</a>{% endif %}
+        </li>
+    {% empty %}
+        <p>No projects yet.</p>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'projects' %}">View all projects →</a>
+</section>
+
+<section class="contact-preview">
+    <h2>Contact</h2>
+    <p>If you want to get in touch, you can reach me here:</p>
+    <ul>
+        <li>Email: genyadamenko@gmail.com</li>
+        <li>Telegram: @ezhnyag</li>
+    </ul>
+</section>
+
+{% endblock %}
