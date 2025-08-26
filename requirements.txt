@@ -170,4 +170,6 @@ xmod==1.8.1
 xonsh==0.19.9
 yarl==1.20.1
 zeroconf==0.147.0
+gunicorn==21.2.0
+
 
